@@ -1,0 +1,16 @@
+{
+  "model_type": "CompatibilityMLP",
+  "input_dim": 10,
+  "hidden_dims": [
+    64,
+    32
+  ],
+  "dropout": 0.1,
+  "activation": "ReLU",
+  "output_activation": "Sigmoid",
+  "target_range": [
+    0.0,
+    1.0
+  ],
+  "total_trainable_parameters": 2817
+}

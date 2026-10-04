@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+ENV/
+env/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Environment Variables & Secrets (CRITICAL)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Node / Frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+dist-ssr/
+*.local
+
+# Model Checkpoints & Large Artifacts (Future phases)
+models/checkpoints/*.pt
+models/checkpoints/*.pth
+models/checkpoints/*.bin
+models/checkpoints/*.onnx
+!models/checkpoints/best_matching_mlp.pt
+!models/checkpoints/.gitkeep
+!models/metadata/.gitkeep
+
+# Data (Avoid committing raw or massive datasets)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/training/*
+!data/training/.gitkeep
+data/validation/*
+!data/validation/.gitkeep
+data/test/*
+!data/test/.gitkeep
+
+# IDEs & System Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

@@ -1,0 +1,240 @@
+{
+  "_metadata": {
+    "dataset_type": "DEMO",
+    "synthetic": true,
+    "source": "local demonstration dataset",
+    "description": "Deterministic local synthetic student profiles for demonstration purposes only. Not connected to Supabase."
+  },
+  "students": [
+    {
+      "id": "00000000-de00-0000-0000-000000000001",
+      "user_id": "00000000-de00-0000-0001-000000000001",
+      "full_name": "Student A (Demo)",
+      "email": "student.a.demo@college.edu",
+      "department": "Computer Science & Engineering",
+      "academic_year": 4,
+      "bio": "Senior Computer Science undergraduate specializing in computer vision and deep learning architectures.",
+      "skills": [
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000001",
+          "skill_name": "Python",
+          "category": "ai_ml",
+          "proficiency_level": 4
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000002",
+          "skill_name": "PyTorch",
+          "category": "ai_ml",
+          "proficiency_level": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000011",
+          "skill_name": "Computer Vision",
+          "category": "ai_ml",
+          "proficiency_level": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000009",
+          "skill_name": "Machine Learning",
+          "category": "ai_ml",
+          "proficiency_level": 3
+        }
+      ],
+      "interests": [
+        {
+          "name": "Artificial Intelligence & Deep Learning",
+          "category": "ai_ml"
+        }
+      ],
+      "previous_projects": [
+        {
+          "title": "Gesture Recognition System",
+          "description": "PyTorch computer vision model for hand pose estimation and gesture recognition."
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Deep Learning Specialization",
+          "issuing_organization": "DeepLearning.AI"
+        }
+      ],
+      "hours_per_week": 15
+    },
+    {
+      "id": "00000000-de00-0000-0000-000000000002",
+      "user_id": "00000000-de00-0000-0001-000000000002",
+      "full_name": "Student B (Demo)",
+      "email": "student.b.demo@college.edu",
+      "department": "Data Science & Artificial Intelligence",
+      "academic_year": 3,
+      "bio": "Third-year Data Science student passionate about computer vision pipelines and backend integration.",
+      "skills": [
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000001",
+          "skill_name": "Python",
+          "category": "ai_ml",
+          "proficiency_level": 4
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000002",
+          "skill_name": "PyTorch",
+          "category": "ai_ml",
+          "proficiency_level": 4
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000011",
+          "skill_name": "Computer Vision",
+          "category": "ai_ml",
+          "proficiency_level": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000006",
+          "skill_name": "FastAPI",
+          "category": "backend",
+          "proficiency_level": 3
+        }
+      ],
+      "interests": [
+        {
+          "name": "Artificial Intelligence & Deep Learning",
+          "category": "ai_ml"
+        },
+        {
+          "name": "Robotics & Autonomous Systems",
+          "category": "ai_ml"
+        }
+      ],
+      "previous_projects": [
+        {
+          "title": "Object Detection for Autonomous Vehicles",
+          "description": "Deep learning vision pipeline using PyTorch with FastAPI microservices."
+        }
+      ],
+      "certifications": [
+        {
+          "name": "PyTorch Computer Vision Professional",
+          "issuing_organization": "PyTorch Foundation"
+        }
+      ],
+      "hours_per_week": 20
+    },
+    {
+      "id": "00000000-de00-0000-0000-000000000003",
+      "user_id": "00000000-de00-0000-0001-000000000003",
+      "full_name": "Student C (Demo)",
+      "email": "student.c.demo@college.edu",
+      "department": "Information Technology",
+      "academic_year": 3,
+      "bio": "Third-year IT student focused on natural language processing, backend APIs, and distributed data systems.",
+      "skills": [
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000001",
+          "skill_name": "Python",
+          "category": "ai_ml",
+          "proficiency_level": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000012",
+          "skill_name": "NLP",
+          "category": "ai_ml",
+          "proficiency_level": 4
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000006",
+          "skill_name": "FastAPI",
+          "category": "backend",
+          "proficiency_level": 4
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000013",
+          "skill_name": "SQL",
+          "category": "backend",
+          "proficiency_level": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000007",
+          "skill_name": "PostgreSQL",
+          "category": "backend",
+          "proficiency_level": 3
+        }
+      ],
+      "interests": [
+        {
+          "name": "Artificial Intelligence & Deep Learning",
+          "category": "ai_ml"
+        },
+        {
+          "name": "Web Development & Cloud Computing",
+          "category": "backend"
+        }
+      ],
+      "previous_projects": [
+        {
+          "title": "Campus Support Chatbot",
+          "description": "Conversational assistant leveraging NLP transformer models with FastAPI and PostgreSQL backend."
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Natural Language Processing with Transformers",
+          "issuing_organization": "Hugging Face"
+        }
+      ],
+      "hours_per_week": 16
+    },
+    {
+      "id": "00000000-de00-0000-0000-000000000004",
+      "user_id": "00000000-de00-0000-0001-000000000004",
+      "full_name": "Student D (Demo)",
+      "email": "student.d.demo@college.edu",
+      "department": "Computer Science & Engineering",
+      "academic_year": 2,
+      "bio": "Sophomore developer passionate about data analysis, machine learning algorithms, and data modeling.",
+      "skills": [
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000001",
+          "skill_name": "Python",
+          "category": "ai_ml",
+          "proficiency_level": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000009",
+          "skill_name": "Machine Learning",
+          "category": "ai_ml",
+          "proficiency_level": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000014",
+          "skill_name": "Pandas",
+          "category": "data_science",
+          "proficiency_level": 4
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000013",
+          "skill_name": "SQL",
+          "category": "backend",
+          "proficiency_level": 3
+        }
+      ],
+      "interests": [
+        {
+          "name": "Artificial Intelligence & Deep Learning",
+          "category": "ai_ml"
+        }
+      ],
+      "previous_projects": [
+        {
+          "title": "Personal Budget Forecasting",
+          "description": "Time-series predictive analytics built using Pandas and scikit-learn for student finances."
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Python for Data Science and Machine Learning",
+          "issuing_organization": "IBM"
+        }
+      ],
+      "hours_per_week": 12
+    }
+  ]
+}

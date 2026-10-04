@@ -1,0 +1,27 @@
+{
+  "dataset_type": "synthetic_student_project_compatibility",
+  "description": "Synthetic dataset for training and benchmarking PyTorch MLP compatibility model.",
+  "random_seed": 42,
+  "feature_count": 10,
+  "feature_names": [
+    "skill_coverage_ratio",
+    "mean_proficiency_matched",
+    "proficiency_deficit_ratio",
+    "proficiency_surplus_ratio",
+    "unmatched_skills_count_norm",
+    "semantic_description_similarity",
+    "interest_domain_overlap",
+    "academic_seniority_norm",
+    "prior_project_experience_norm",
+    "certification_count_norm"
+  ],
+  "total_samples": 2000,
+  "train_samples": 1400,
+  "validation_samples": 300,
+  "test_samples": 300,
+  "target_range": [
+    0.0,
+    1.0
+  ],
+  "created_at": "2026-10-02T19:30:00Z"
+}

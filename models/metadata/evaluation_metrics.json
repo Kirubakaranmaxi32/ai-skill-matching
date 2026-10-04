@@ -1,0 +1,9 @@
+{
+  "evaluation_type": "synthetic_held_out_test_set",
+  "samples_evaluated": 300,
+  "mae": 0.027247,
+  "mse": 0.001247,
+  "rmse": 0.035316,
+  "r2": 0.959297,
+  "disclaimer": "Evaluated exclusively on synthetic development data; does not establish live human recommendation accuracy."
+}

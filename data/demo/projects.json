@@ -1,0 +1,121 @@
+{
+  "_metadata": {
+    "dataset_type": "DEMO",
+    "synthetic": true,
+    "source": "local demonstration dataset",
+    "description": "Deterministic local synthetic projects for pipeline demonstration purposes only. Not connected to Supabase."
+  },
+  "projects": [
+    {
+      "id": "00000000-de00-0001-0000-000000000001",
+      "title": "AI-Powered Sign Language Translator (Demo)",
+      "description": "A real-time deep learning computer vision system using PyTorch, OpenCV, and FastAPI to translate sign language gestures into natural language text and speech.",
+      "owner_id": "00000000-de00-0000-0000-000000000001",
+      "owner_name": "Student A (Demo)",
+      "status": "open",
+      "created_at": "2026-03-01T10:00:00Z",
+      "updated_at": "2026-03-01T10:00:00Z",
+      "required_skills": [
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000001",
+          "skill_name": "Python",
+          "category": "ai_ml",
+          "required_proficiency": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000002",
+          "skill_name": "PyTorch",
+          "category": "ai_ml",
+          "required_proficiency": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000011",
+          "skill_name": "Computer Vision",
+          "category": "ai_ml",
+          "required_proficiency": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000006",
+          "skill_name": "FastAPI",
+          "category": "backend",
+          "required_proficiency": 2
+        }
+      ],
+      "members": []
+    },
+    {
+      "id": "00000000-de00-0001-0000-000000000002",
+      "title": "Smart Campus Assistant (Demo)",
+      "description": "An intelligent campus conversational assistant utilizing NLP transformers, FastAPI microservices, and SQL databases to answer student queries on courses, schedules, and facilities.",
+      "owner_id": "00000000-de00-0000-0000-000000000003",
+      "owner_name": "Student C (Demo)",
+      "status": "open",
+      "created_at": "2026-03-02T11:00:00Z",
+      "updated_at": "2026-03-02T11:00:00Z",
+      "required_skills": [
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000001",
+          "skill_name": "Python",
+          "category": "ai_ml",
+          "required_proficiency": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000012",
+          "skill_name": "NLP",
+          "category": "ai_ml",
+          "required_proficiency": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000006",
+          "skill_name": "FastAPI",
+          "category": "backend",
+          "required_proficiency": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000013",
+          "skill_name": "SQL",
+          "category": "backend",
+          "required_proficiency": 2
+        }
+      ],
+      "members": []
+    },
+    {
+      "id": "00000000-de00-0001-0000-000000000003",
+      "title": "Student Expense Prediction System (Demo)",
+      "description": "A predictive analytics application using machine learning regression, Pandas data pipelines, and SQL databases to forecast semester living expenses for university students.",
+      "owner_id": "00000000-de00-0000-0000-000000000004",
+      "owner_name": "Student D (Demo)",
+      "status": "open",
+      "created_at": "2026-03-03T12:00:00Z",
+      "updated_at": "2026-03-03T12:00:00Z",
+      "required_skills": [
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000001",
+          "skill_name": "Python",
+          "category": "ai_ml",
+          "required_proficiency": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000009",
+          "skill_name": "Machine Learning",
+          "category": "ai_ml",
+          "required_proficiency": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000014",
+          "skill_name": "Pandas",
+          "category": "data_science",
+          "required_proficiency": 3
+        },
+        {
+          "skill_id": "a1000000-0000-0000-0000-000000000013",
+          "skill_name": "SQL",
+          "category": "backend",
+          "required_proficiency": 2
+        }
+      ],
+      "members": []
+    }
+  ]
+}
