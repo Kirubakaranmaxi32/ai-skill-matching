@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { LogIn, Mail, Lock, AlertCircle, Loader2, Info } from 'lucide-react';
 
 export const LoginPage: React.FC = () => {
-  const { login, isConfigured } = useAuth();
+  const { user, login, isConfigured, loading } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -14,7 +14,15 @@ export const LoginPage: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   // Extract return destination if redirected from a protected route
-  const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/dashboard';
+  const targetPath = (location.state as { from?: { pathname: string } })?.from?.pathname;
+  const from = (targetPath && targetPath !== '/login' && targetPath !== '/register') ? targetPath : '/dashboard';
+
+  // Automatically navigate to target if session is already active
+  useEffect(() => {
+    if (!loading && user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, loading, navigate, from]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

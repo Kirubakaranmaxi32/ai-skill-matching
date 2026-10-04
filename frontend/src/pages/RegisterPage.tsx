@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { UserPlus, User, Mail, Lock, AlertCircle, CheckCircle2, Loader2, Info } from 'lucide-react';
 
 export const RegisterPage: React.FC = () => {
-  const { register, isConfigured } = useAuth();
+  const { user, register, isConfigured, loading } = useAuth();
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
@@ -14,6 +14,13 @@ export const RegisterPage: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [confirmationNotice, setConfirmationNotice] = useState<string | null>(null);
+
+  // Automatically navigate to dashboard if already authenticated
+  useEffect(() => {
+    if (!loading && user) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [user, loading, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

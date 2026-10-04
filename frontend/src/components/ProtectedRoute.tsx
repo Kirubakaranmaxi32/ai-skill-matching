@@ -21,6 +21,19 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   }
 
   if (!user) {
+    // If an auth token is in localStorage, session state is settling
+    const hasLocalToken = Object.keys(localStorage).some(
+      (key) => (key.startsWith('sb-') && key.endsWith('-auth-token')) || key.includes('auth-token')
+    );
+    if (hasLocalToken) {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-3">
+          <Loader2 className="w-8 h-8 text-indigo-600 animate-spin" />
+          <p className="text-sm text-slate-500 font-medium">Establishing authenticated session...</p>
+        </div>
+      );
+    }
+
     // Redirect to login preserving intended target path
     return <Navigate to="/login" state={{ from: location }} replace />;
   }

@@ -56,11 +56,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [isConfigured]);
 
   const handleRegister = async (params: RegisterParams) => {
-    return await authRegister(params);
+    const res = await authRegister(params);
+    if (!res.error && res.data?.session) {
+      setSession(res.data.session);
+      setUser(res.data.user ?? res.data.session.user ?? null);
+    }
+    return res;
   };
 
   const handleLogin = async (params: LoginParams) => {
-    return await authLogin(params);
+    const res = await authLogin(params);
+    if (!res.error && res.data?.session) {
+      setSession(res.data.session);
+      setUser(res.data.user ?? res.data.session.user ?? null);
+    }
+    return res;
   };
 
   const handleLogout = async () => {
