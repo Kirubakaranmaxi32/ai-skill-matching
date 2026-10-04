@@ -56,7 +56,7 @@ export const RootLayout: React.FC = () => {
               <div className="flex items-center space-x-2">
                 <span className="font-bold text-lg text-slate-900 tracking-tight">AI Skill Matching</span>
                 <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
-                  DreamMap AI
+                  AI Matching
                 </span>
               </div>
               <p className="text-xs text-slate-500 font-medium hidden sm:block">Find the right skills. Build the right team.</p>
@@ -223,7 +223,7 @@ export const RootLayout: React.FC = () => {
             <span>Find the right skills. Build the right team.</span>
           </div>
           <div className="text-xs text-slate-400">
-            AI Skill Matching / DreamMap • PyTorch Deep Learning • Supabase PostgreSQL • Protected Sessions
+            AI Skill Matching • PyTorch Deep Learning • Supabase PostgreSQL • Protected Sessions
           </div>
         </div>
       </footer>
