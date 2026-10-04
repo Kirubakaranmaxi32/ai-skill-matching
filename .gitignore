@@ -37,6 +37,8 @@ htmlcov/
 .env
 .env.local
 .env.*.local
+.env.production
+.env.*.production
 *.pem
 *.key
 
@@ -79,3 +81,4 @@ data/test/*
 *~
 .DS_Store
 Thumbs.db
+cloudflared.exe

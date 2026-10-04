@@ -5,7 +5,7 @@ Provides interfaces and adapters for converting project descriptions
 and skills into dense semantic representations using pretrained Sentence Transformers.
 """
 
-from typing import List, Optional, Protocol, Union
+from typing import List, Optional, Protocol, Union, Dict, Any
 import logging
 
 logger = logging.getLogger(__name__)
@@ -55,6 +55,9 @@ class SentenceTransformerEmbeddingProvider:
     The trainable Deep Learning model will be the PyTorch MLP implemented in subsequent steps.
     """
 
+    # Class-level cache to share model weights across services and eliminate duplicate memory allocations
+    _cached_models: Dict[str, Any] = {}
+
     def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2"):
         self._model_name = model_name
         self._model = None
@@ -64,6 +67,22 @@ class SentenceTransformerEmbeddingProvider:
         self._initialize()
 
     def _initialize(self) -> None:
+        # Check class-level cache first
+        if self._model_name in SentenceTransformerEmbeddingProvider._cached_models:
+            cached = SentenceTransformerEmbeddingProvider._cached_models[self._model_name]
+            self._model = cached["model"]
+            self._dimension = cached["dimension"]
+            self._is_available = True
+            self._status_message = "Ready"
+            return
+
+        try:
+            import torch
+            if torch.get_num_threads() > 2:
+                torch.set_num_threads(2)
+        except Exception:
+            pass
+
         try:
             import sentence_transformers  # type: ignore
             # Explicitly load onto CPU device per system requirements
@@ -75,6 +94,10 @@ class SentenceTransformerEmbeddingProvider:
                     self._dimension = int(self._model.get_embedding_dimension())
                 elif hasattr(self._model, "get_sentence_embedding_dimension"):
                     self._dimension = int(self._model.get_sentence_embedding_dimension())
+                SentenceTransformerEmbeddingProvider._cached_models[self._model_name] = {
+                    "model": self._model,
+                    "dimension": self._dimension,
+                }
             except Exception as load_err:
                 self._is_available = False
                 self._status_message = f"Model weights not loaded: {str(load_err)}"
