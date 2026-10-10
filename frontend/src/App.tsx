@@ -21,7 +21,7 @@ import { AdminRoute } from './components/AdminRoute';
 export const App: React.FC = () => {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<HomePage />} />

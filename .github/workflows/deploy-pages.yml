@@ -1,0 +1,61 @@
+name: Deploy Frontend to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: frontend
+
+      - name: Build frontend for production
+        run: npm run build
+        working-directory: frontend
+        env:
+          GITHUB_ACTIONS: true
+          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL || 'https://jobs-parent-sink-famous.trycloudflare.com/api/v1' }}
+          VITE_BACKEND_URL: ${{ vars.VITE_BACKEND_URL || 'https://jobs-parent-sink-famous.trycloudflare.com' }}
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL || 'https://hranjrkbriebixdrvsbr.supabase.co' }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY || 'sb_publishable_PGC593HRFCpFW2TPuCgG8w_Q6OKpP-I' }}
+
+      - name: Support Single Page App Routing on GitHub Pages
+        run: cp frontend/dist/index.html frontend/dist/404.html
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
