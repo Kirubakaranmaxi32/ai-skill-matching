@@ -40,8 +40,8 @@ jobs:
         working-directory: frontend
         env:
           GITHUB_ACTIONS: true
-          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL || 'https://jobs-parent-sink-famous.trycloudflare.com/api/v1' }}
-          VITE_BACKEND_URL: ${{ vars.VITE_BACKEND_URL || 'https://jobs-parent-sink-famous.trycloudflare.com' }}
+          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL || 'https://platforms-were-surplus-optimization.trycloudflare.com/api/v1' }}
+          VITE_BACKEND_URL: ${{ vars.VITE_BACKEND_URL || 'https://platforms-were-surplus-optimization.trycloudflare.com' }}
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL || 'https://hranjrkbriebixdrvsbr.supabase.co' }}
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY || 'sb_publishable_PGC593HRFCpFW2TPuCgG8w_Q6OKpP-I' }}
 
