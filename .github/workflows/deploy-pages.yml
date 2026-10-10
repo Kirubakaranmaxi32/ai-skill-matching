@@ -46,7 +46,7 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY || 'sb_publishable_PGC593HRFCpFW2TPuCgG8w_Q6OKpP-I' }}
 
       - name: Support Single Page App Routing on GitHub Pages
-        run: cp frontend/dist/index.html frontend/dist/404.html
+        run: cp frontend/dist/index.html frontend/dist/404.html && touch frontend/dist/.nojekyll
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
